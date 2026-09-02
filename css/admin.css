@@ -1,0 +1,69 @@
+.admin-body{ background: var(--cream-dim); }
+.admin-main{ padding: 64px 0 90px; }
+.admin-wrap{ max-width: 640px; }
+
+.admin-card{
+  background: var(--white);
+  border: 1px solid rgba(22,59,109,0.1);
+  border-radius: var(--radius);
+  padding: 36px;
+}
+.admin-card h1{ font-size: 1.5rem; }
+.admin-card h2{ font-size: 1.1rem; }
+.admin-sub{ color: var(--ink-soft); margin-top: 8px; font-size: 0.95rem; }
+
+.admin-top-row{
+  display:flex; align-items:flex-start; justify-content:space-between; gap: 16px; margin-bottom: 8px;
+}
+.btn-ghost-dark{ color: var(--blue-deep); border-color: rgba(22,59,109,0.3); }
+.btn-ghost-dark:hover{ background: var(--cream-dim); }
+
+.admin-form{ display:grid; gap: 16px; margin-top: 24px; }
+.admin-form label{
+  display:grid; gap: 6px; font-size: 0.9rem; font-weight: 600; color: var(--ink);
+}
+.admin-form input[type="email"],
+.admin-form input[type="password"],
+.admin-form input[type="text"],
+.admin-form select{
+  font-family:'Poppins', sans-serif;
+  padding: 11px 14px; border-radius: var(--radius); border: 1px solid rgba(22,59,109,0.2);
+  font-size: 0.95rem; color: var(--ink); background: var(--cream);
+}
+.admin-photo-event{
+  display:inline-block; font-size: 0.72rem; font-weight:600; color: var(--blue-deep);
+  background: var(--cream-dim); padding: 2px 8px; border-radius: 3px; margin-top: 4px;
+}
+.admin-form input[type="file"]{
+  font-family:'Poppins', sans-serif; font-size: 0.9rem;
+}
+.admin-form input:focus{ outline: 2px solid var(--gold); outline-offset: 1px; }
+.admin-form button{ justify-self: start; margin-top: 4px; }
+
+.admin-error{ color: var(--red); font-size: 0.88rem; min-height: 1.2em; }
+.admin-success{ color: #2E7D45; font-size: 0.88rem; min-height: 1.2em; }
+
+.admin-list-heading{ margin-top: 40px; margin-bottom: 16px; }
+.admin-photo-list{ display:grid; gap: 12px; }
+.admin-empty{ color: var(--ink-soft); font-size: 0.92rem; }
+
+.admin-photo-row{
+  display:grid; grid-template-columns: 56px 1fr auto; align-items:center; gap: 14px;
+  padding: 10px; border: 1px solid var(--cream-dim); border-radius: var(--radius);
+}
+.admin-photo-thumb{
+  width: 56px; height: 56px; border-radius: var(--radius); object-fit: cover;
+}
+.admin-photo-info .admin-photo-title{ font-weight:600; font-size: 0.92rem; }
+.admin-photo-info .admin-photo-caption{ color: var(--ink-soft); font-size: 0.82rem; }
+.admin-delete-btn{
+  background: none; border: 1px solid rgba(156,27,49,0.3); color: var(--red);
+  padding: 7px 14px; border-radius: var(--radius); font-size: 0.85rem; font-weight:600;
+}
+.admin-delete-btn:hover{ background: rgba(156,27,49,0.08); }
+
+@media (max-width: 560px){
+  .admin-card{ padding: 26px 20px; }
+  .admin-photo-row{ grid-template-columns: 44px 1fr; }
+  .admin-delete-btn{ grid-column: 1 / -1; justify-self: start; }
+}

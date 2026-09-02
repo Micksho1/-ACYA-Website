@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ACYA — Gallery Admin</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/png" href="assets/acya-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/admin.css">
+</head>
+<body class="admin-body">
+
+<header>
+  <div class="nav">
+    <a href="index.html" class="logo">
+      <img src="assets/acya-logo.png" alt="ACYA crest" class="logo-mark">
+      <span class="logo-text">ACYA</span>
+    </a>
+    <nav class="links">
+      <a href="index.html">← Back to site</a>
+    </nav>
+  </div>
+  <div class="sash sash--thin"></div>
+</header>
+
+<main class="admin-main">
+  <div class="wrap admin-wrap">
+
+    <!-- LOGIN -->
+    <section id="loginSection" class="admin-card">
+      <h1>Gallery admin</h1>
+      <p class="admin-sub">Sign in to add or remove photos from the ACYA gallery.</p>
+      <form id="loginForm" class="admin-form">
+        <label>Email
+          <input type="email" id="loginEmail" required autocomplete="username">
+        </label>
+        <label>Password
+          <input type="password" id="loginPassword" required autocomplete="current-password">
+        </label>
+        <button type="submit" class="btn btn-primary">Sign in</button>
+        <p class="admin-error" id="loginError"></p>
+      </form>
+    </section>
+
+    <!-- UPLOAD (shown after login) -->
+    <section id="uploadSection" class="admin-card" hidden>
+      <div class="admin-top-row">
+        <div>
+          <h1>Add a photo</h1>
+          <p class="admin-sub">Signed in as <span id="userEmail"></span></p>
+        </div>
+        <button id="logoutBtn" class="btn btn-ghost btn-ghost-dark">Sign out</button>
+      </div>
+
+      <form id="uploadForm" class="admin-form">
+        <label>Event
+          <select id="photoEvent" required>
+            <option value="National Convention">National Convention</option>
+            <option value="NEC Meeting">NEC Meeting</option>
+            <option value="National Conference">National Conference</option>
+          </select>
+        </label>
+        <label>Photo title
+          <input type="text" id="photoTitle" placeholder="e.g. National Convention" required>
+        </label>
+        <label>Caption
+          <input type="text" id="photoCaption" placeholder="e.g. Obuama, Rivers Province · August 2026">
+        </label>
+        <label>Image file
+          <input type="file" id="photoFile" accept="image/*" required>
+        </label>
+        <button type="submit" class="btn btn-primary" id="uploadBtn">Upload photo</button>
+        <p class="admin-error" id="uploadError"></p>
+        <p class="admin-success" id="uploadSuccess"></p>
+      </form>
+
+      <h2 class="admin-list-heading">Photos in the gallery</h2>
+      <div id="photoList" class="admin-photo-list">
+        <p class="admin-empty">Loading photos…</p>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+<script src="js/supabase-config.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>
